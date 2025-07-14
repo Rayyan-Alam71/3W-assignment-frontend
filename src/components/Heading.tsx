@@ -34,7 +34,7 @@ const Heading = () => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="mt-4 flex flex-col items-start space-y-3 md:hidden text-white text-sm font-medium px-2">
-            <a href="#" className="w-full py-2 border-b border-gray-700 hover:text-cyan-300 transition">Home</a>
+            <a href="/" className="w-full py-2 border-b border-gray-700 hover:text-cyan-300 transition">Home</a>
             <a href="#" className="w-full py-2 border-b border-gray-700 hover:text-cyan-300 transition">Contact</a>
             <a href="#" className="w-full py-2 hover:text-cyan-300 transition">About Us</a>
           </div>
