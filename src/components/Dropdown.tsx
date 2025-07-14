@@ -30,7 +30,7 @@ const Dropdown = () => {
     setClaimLoading(true)
     try{
       
-      await fetch("http://localhost:8080/api/v1/claimPoints", {
+      await fetch("https://rayyan-alam-3w.onrender.com/api/v1/claimPoints", {
         method : 'POST',
         headers : {
           "Content-Type": "application/json",

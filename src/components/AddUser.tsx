@@ -18,7 +18,7 @@ const AddUser = () => {
     setLoading(true)
 
     try{
-      await fetch("http://localhost:8080/api/v1/addUser",{
+      await fetch("https://rayyan-alam-3w.onrender.com/api/v1/addUser",{
         method : 'POST',
         headers:{
           'Content-type' : 'application/json',

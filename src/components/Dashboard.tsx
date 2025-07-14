@@ -10,7 +10,7 @@ const Dashboard = () => {
     async function getUsers() {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:8080/api/v1/users", {
+        const res = await fetch("https://rayyan-alam-3w.onrender.com/api/v1/users", {
           method: 'GET',
         });
         const data = await res.json();
@@ -34,7 +34,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="px-4 py-10 ">
+    <div className="px-4 py-10 min-h-[80vh]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-cyan-300 tracking-wide drop-shadow-glow">
