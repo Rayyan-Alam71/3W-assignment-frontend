@@ -1,4 +1,3 @@
-import React from 'react'
 import Dropdown from './Dropdown'
 import Dashboard from './Dashboard'
 
