@@ -6,11 +6,12 @@ const Dashboard = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
+  // fetching the users from the db
   useEffect(() => {
     async function getUsers() {
       try {
         setLoading(true);
-        const res = await fetch("https://rayyan-alam-3w.onrender.com/api/v1/users", {
+        const res = await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/users", {
           method: 'GET',
         });
         const data = await res.json();
@@ -25,6 +26,7 @@ const Dashboard = () => {
     getUsers();
   }, []);
 
+  // adding the 'rank' field to each user, to keep track of the winners and their positions
   const getLeaderboard = () => {
     return users
       .map((user, index) => ({
@@ -54,6 +56,7 @@ const Dashboard = () => {
               </h2>
 
               <div className="space-y-4">
+                {/* previewing skeleton to enhance user-experience */}
                 {loading &&
                   [1, 2, 3, 4].map((e) => (
                     <div

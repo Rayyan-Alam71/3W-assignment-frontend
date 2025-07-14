@@ -5,14 +5,16 @@ import type { User } from '../types';
 
 
 const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [users, setUsers] = useState<User[]>([])
   const [claimLoading, setClaimLoading] = useState<boolean>(false)
 
   const navigate = useNavigate()
+
+  // should fetch the users list on Dropdown mounting
   useEffect(()=>{
     async function fetchUsers(){
-      const res = await fetch("https://rayyan-alam-3w.onrender.com/api/v1/users", {
+      const res = await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/users", {
         method : 'GET'
       })
       const users_data = await res.json()
@@ -30,7 +32,7 @@ const Dropdown = () => {
     setClaimLoading(true)
     try{
       
-      await fetch("https://rayyan-alam-3w.onrender.com/api/v1/claimPoints", {
+      await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/claimPoints", {
         method : 'POST',
         headers : {
           "Content-Type": "application/json",

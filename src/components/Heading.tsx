@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'; // icon library
 import { Link } from 'react-router-dom';
 
 const Heading = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 

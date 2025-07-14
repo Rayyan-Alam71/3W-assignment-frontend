@@ -2,14 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false)
 
   const navigate = useNavigate()
 
+  // NOTE : only, the name will be used for the db call
   const handleSubmit = async () =>{
     if(name === "" || age === "" || address === "" || phone === ""){
       alert('All fields are required')
@@ -18,7 +19,7 @@ const AddUser = () => {
     setLoading(true)
 
     try{
-      await fetch("https://rayyan-alam-3w.onrender.com/api/v1/addUser",{
+      await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/addUser",{
         method : 'POST',
         headers:{
           'Content-type' : 'application/json',
