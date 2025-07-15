@@ -11,7 +11,7 @@ const Dashboard = () => {
     async function getUsers() {
       try {
         setLoading(true);
-        const res = await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/users", {
+        const res = await fetch("https://rayyan-alam-3w.onrender.com/api/v1/users", {
           method: 'GET',
         });
         const data = await res.json();

@@ -19,7 +19,7 @@ const AddUser = () => {
     setLoading(true)
 
     try{
-      await fetch("http://ec2-51-21-253-214.eu-north-1.compute.amazonaws.com/api/v1/addUser",{
+      await fetch("https://rayyan-alam-3w.onrender.com/api/v1/addUser",{
         method : 'POST',
         headers:{
           'Content-type' : 'application/json',
